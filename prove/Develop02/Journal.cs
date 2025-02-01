@@ -47,7 +47,10 @@ class Journal
             List<string> lines = new List<string>();
             foreach (var entry in JournalEntries)
             {
-                lines.Add($"{entry.GivenJournalDate}|{entry.JournalPrompt}|{entry.DailyJournalEntry}");
+                lines.Add($"Date: {entry.GivenJournalDate}");
+                lines.Add($"Prompt: {entry.JournalPrompt}");
+                lines.Add($"{entry.DailyJournalEntry}");
+                lines.Add($"{""}");
             }
             File.WriteAllLines(filePath, lines);
             Console.WriteLine($"Journal entries saved successfully to '{filePath}'.");

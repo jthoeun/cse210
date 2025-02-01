@@ -25,7 +25,16 @@ class PromptGenerator
             return "No prompts available.";
         }
 
-        int index = _random.Next(_journalPrompts.Count);
-        return _journalPrompts[index];
+        ShuffleList(_journalPrompts);
+        return _journalPrompts[_random.Next(_journalPrompts.Count)];
+    }
+
+    private void ShuffleList(List<string> list)
+    {
+        for (int i = list.Count - 1; i > 0; i--)
+        {
+            int j = _random.Next(i + 1);
+            (list[i], list[j]) = (list[j], list[i]);
+        }
     }
 }
