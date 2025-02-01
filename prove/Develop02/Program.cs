@@ -15,7 +15,7 @@ class Program
             Console.WriteLine("4. Load Journal Entries");
             Console.WriteLine("5. Exit");
 
-            Console.Write("Choose an option: ");
+            Console.Write("Choose an option (number): ");
             string choice = Console.ReadLine();
 
             switch (choice)

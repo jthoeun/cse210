@@ -16,6 +16,10 @@ class PromptGenerator
         "How did you show Chirst-like love?",
         "What opprotunites you came across today?",
         "How many things you were able to complete today?",
+        "Who was the most interesting person I interacted with today?",
+        "How did I see the hand of the Lord in my life today?",
+        "Did you have a spirtual moment today? If so, what was it?"
+
     };
 
     public string GetRandomPrompt()
