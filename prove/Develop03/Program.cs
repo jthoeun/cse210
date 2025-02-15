@@ -4,8 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Reference reference = new Reference("D&C", 84, 85);
-        Scripture scripture = new Scripture(reference, "Neither take ye thought beforehand what ye shall say; but treasure up in your minds continually the words of life, and it shall be given you in the very hour that portion that shall be meted unto every man.");
+        Reference reference = new Reference("D&C", 4, 5);
+        Scripture scripture = new Scripture(reference, "And faith, hope, charity and love, with an eye single to the glory of God, qualify him for the work.");
 
         Console.Clear();
         Console.WriteLine(scripture.GetMaskedText());

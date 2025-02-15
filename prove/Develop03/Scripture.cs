@@ -4,24 +4,24 @@ using System.Linq;
 
 class Scripture
 {
-    public Reference Reference { get; private set; }
+    private Reference reference;
     private List<Word> words;
 
     public Scripture(Reference reference, string text)
     {
-        Reference = reference;
+        this.reference = reference;
         words = text.Split(' ').Select(w => new Word(w)).ToList();
     }
 
     public string GetMaskedText()
     {
-        return Reference.ToString() + " - " + string.Join(" ", words);
+        return reference.ToString() + " - " + string.Join(" ", words);
     }
 
     public void HideWords()
     {
         Random rand = new Random();
-        int wordsToHide = Math.Max(1, words.Count / 10); // Hide around 10% of words
+        int wordsToHide = Math.Max(1, words.Count / 10);
 
         for (int i = 0; i < wordsToHide; i++)
         {
@@ -31,6 +31,6 @@ class Scripture
 
     public bool IsCompletelyHidden()
     {
-        return words.All(w => w.ToString() == "____");
+        return words.All(w => w.IsHidden);
     }
 }
