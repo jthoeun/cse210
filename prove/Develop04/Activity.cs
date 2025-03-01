@@ -29,6 +29,7 @@ abstract class Activity
     {
         Console.WriteLine("Good job!");
         Console.WriteLine($"You have completed {Name} for {Duration} seconds.");
+        Logger.SaveLog(Name, Duration);
         PauseWithAnimation(3);
     }
 
