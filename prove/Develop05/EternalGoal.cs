@@ -12,6 +12,6 @@ class EternalGoal : Goal
 
     public override string GetProgress()
     {
-        return "[∞]"; // Indicating an eternal goal
+        return "[E]";
     }
 }
