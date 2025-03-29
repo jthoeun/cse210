@@ -2,17 +2,34 @@ using System;
 
 class Comment
 {
-    private string commenterName;
-    private string text;
+    private string _commenterName;
+    private string _text;
+    private DateTime _timestamp;
 
     public Comment(string commenterName, string text)
     {
-        this.commenterName = commenterName;
-        this.text = text;
+        _commenterName = commenterName;
+        _text = text;
+        _timestamp = DateTime.Now;
+    }
+
+    public string GetCommenterName()
+    {
+        return _commenterName;
+    }
+
+    public string GetText()
+    {
+        return _text;
+    }
+
+    public DateTime GetTimestamp()
+    {
+        return _timestamp;
     }
 
     public void DisplayComment()
     {
-        Console.WriteLine($"{commenterName}: {text}");
+        Console.WriteLine($"[{_timestamp}] {_commenterName}: {_text}");
     }
 }
